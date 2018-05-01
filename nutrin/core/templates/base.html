@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nutrin {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename="bootstrap/node_modules/bootstrap/compiler/bootstrap.css") }}"
+</head>
+<body>
+    <!-- NavBar -->
+    <header class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="navbar-brand h1 mb-0" href="#">Nutrin</a>
+            <a class="text-light" href="/login"><i class="fas fa-user"></i> Login</a>
+        </div>
+    </header>
+    {% block main %}
+    {% endblock %}
+    <footer class="bg-dark">
+            <div class="container">
+                <div class="row p-5  text-light">
+                    <div class="col-sm-4">
+                    <h3>Sobre</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed tincidunt tellus. In dictum odio at nibh congue luctus. Nulla nec turpis feugiat, luctus arcu ut, varius lacus. </p>
+                    <p>Aliquam erat volutpat. In auctor dolor id eros pharetra, mollis pretium neque elementum. Sed eu commodo ligula. Fusce rhoncus tellus sollicitudin,</p>
+                    </div>
+                    <div class="col-sm-4">
+                    <h3>Serviços</h3>
+                    <div class="list-group text-center">
+                        <a class="list-group-item list-group-item-action list-group-item-primary" href="#">Serviços Item</a>
+                        <a class="list-group-item list-group-item-action list-group-item-primary" href="#">Serviços Item</a>
+                        <a class="list-group-item list-group-item-action list-group-item-primary" href="#">Serviços Item</a>
+                        <a class="list-group-item list-group-item-action list-group-item-primary" href="#">Serviços Item</a>
+                    </div>
+                    </div>
+                    <div class="col-sm-4">
+                    <h3>Social</h3>
+                    <div class="btn-group-vertical btn-block btn-group-lg" role="group">
+                        <a class="btn btn-outline-primary" href="#"><i class="fab fa-facebook"></i> Facebook</a>
+                        <a class="btn btn-outline-primary" href="#"><i class="fab fa-twitter-square"></i> Twitter</a>
+                        <a class="btn btn-outline-primary" href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                        <a class="btn btn-outline-primary" href="#"><i class="fab fa-github-square"></i> WhatsApp</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="../static/bootstrap/node_modules/jquery/dist/jquery.js"></script>
+        <script src="../static/bootstrap/node_modules/popper.js/dist/umd/popper.js"></script>
+        <script src="../static/bootstrap/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>

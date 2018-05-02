@@ -1,18 +1,43 @@
 {% extends 'base.html' %}
 {% block title %}
-    {{super()}} - Login}}
+    {{super()}} - Login
 {% endblock %}
 {% block main %}
-    <form class="m-2">
+<div>
+    <h2>Login</h2>
+    <form class="m-2" action="" method="POST">
         {{form.csrf_token }}
-        <div class="form-group">
-            <label for="login">Usuario:</label>
-            <input type="text" class="form-control" id="login">
+        <div class="form-group">Usuário:</label>
+            {{ form.username(class="form-control", placeholder="Nome de usuário", id="username") }}
+            {% if form.errors.username %}
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                    {% for e in form.errors.username %}
+                        <li>{{ e }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
         </div>
         <div class="form-group">
             <label for="pwd">Senha:</label>
-            <input type="password" class="form-control" id="pwd">
+            {{ form.password(class="form-control", id="pwd") }}
+            {% if form.errors.password %}
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        {% for e in form.errors.password %}
+                            <li>{{ e }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
         </div>
-        <button type="submit" class="btn btn-primary">Entrar</button>
+        <div class="checkbox">
+            <label>
+            {{ form.remember_me(class="form-control") }} Rememer me
+            </label>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
     </form>
+</div>
 {% endblock %}

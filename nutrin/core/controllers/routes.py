@@ -11,14 +11,14 @@ from core.models.forms import LoginForm
 def load_user(id):
     return User.query.filter_by(id=id).first()
 
-@app.route("/login")
+@app.route("/login", methods=["POST","GET"])
 def loginRoute():
     form = LoginForm() 
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
         if user and user.password == form.password.data:
             login_user(user)
-            return redirect(url_for('index'))
+            return redirect(url_for('indexRoute'))
             flash("Login in")
         else:
             flash("Invalid Login")

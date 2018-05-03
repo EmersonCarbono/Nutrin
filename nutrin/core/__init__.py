@@ -17,4 +17,4 @@ lm = LoginManager()
 lm.init_app(app)
 
 from core.models import tables
-from core.controllers import routes
+from core import routes

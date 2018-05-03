@@ -14,13 +14,20 @@
             <!-- LOGO -->
             <a class="navbar-brand h1 mb-0" href="#">Nutrin</a>
             {% if current_user.is_authenticated %}
-                <a class="nav-link" href="{{ url_for("logout") }}">Logout</a>
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ current_user.name }}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Area</a>
+                    <a class="dropdown-item" href="{{ url_for("logout") }}">Logout</a>
+                </div>
+            </div>
             {% else %}
                 <a class="nav-link" href="{{ url_for("loginRoute") }}">Login</a>
             {% endif %}
         </div>
     </header>
-    
     {% with messages = get_flashed_messages() %}
         {% if messages %}
             <div class="alert alert-warning"></div>

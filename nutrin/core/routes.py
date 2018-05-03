@@ -1,6 +1,6 @@
-#from index import index
 from core import app, db, lm
 from flask import render_template, redirect, url_for, flash
+#from controllers.index import index
 
 #login
 from flask_login import login_user, logout_user

@@ -32,3 +32,13 @@ class User(db.Model):
     
     def __repr__(self):
         return "<User {0}>".format(self.username)
+    
+class Paciente(User):
+    __tablename__ = "pacientes"
+
+    dataNascimento = db.Column(db.String)
+    sexo = db.Column(db.String)
+    cidade = db.Column(db.String)
+    profissao = db.Column(db.String)
+    celular = db.Column(db.String)
+    objetivo = db.Column(db.String)

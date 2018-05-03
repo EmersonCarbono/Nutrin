@@ -3,5 +3,151 @@
     {{super()}} - Home
 {% endblock %}
 {% block main %}
-    <p>Home</p>
+<section id="carouselSite" class="carousel slide" data-ride="carousel">
+        <!-- Menu de Controle Carousel -->
+        <ol class="carousel-indicators">
+            <li data-target="#carouselSite" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselSite" data-slide-to="1"></li>
+            <li data-target="#carouselSite" data-slide-to="2"></li>
+        </ol>
+        <!-- Slides de Controle Carousel -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="" class="img-fluid d-block">
+                <!-- Caption de Controle Carousel -->
+                <div class="carousel-caption d-none d-md-block text-dark">
+                    <h1>Lorem Ipsum</h1>
+                    <p class="lead">quando a Letraset lançou decalques contendo passagens de Lorem Ipsum</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="" class="img-fluid d-block">
+                <!-- Caption de Controle Carousel -->
+                <div class="carousel-caption d-none d-md-block text-dark">
+                    <h1>Lorem Ipsum</h1>
+                    <p class="lead">quando a Letraset lançou decalques contendo passagens de Lorem Ipsum</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="" class="img-fluid d-block">
+                <!-- Caption de Controle Carousel -->
+                <div class="carousel-caption d-none d-md-block text-dark">
+                    <h1>Lorem Ipsum</h1>
+                    <p class="lead">quando a Letraset lançou decalques contendo passagens de Lorem Ipsum</p>
+                </div>
+            </div>
+        </div>
+        <!-- Controle de avanço e recuo de Controle Carousel -->
+        <a class="carousel-control-prev" href="#carouselSite" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselSite" role="button" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="sr-only">Proximo</span>
+        </a>
+    </section>
+    <div class="container">
+        <section>
+            <div class="row">
+                <div class="col-12  my-3">
+                    <h3 class="text-center">SERVIÇOS</h3>
+                </div>
+            </div>
+            <div class="row">
+                <article class="col-sm-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Serviço</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed tincidunt tellus. In dictum odio at nibh congue luctus. Nulla nec turpis feugiat, luctus arcu ut, varius lacus.</p>
+                            <p>R$ 00,00</p>
+                            <a href="#" class="btn btn-primary">Marcar Horario</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="col-sm-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Serviço</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed tincidunt tellus. In dictum odio at nibh congue luctus. Nulla nec turpis feugiat, luctus arcu ut, varius lacus.</p>
+                                <p>R$ 00,00</p>
+                                <a href="#" class="btn btn-primary mx-3">Marcar Horario</a>
+                            </div>
+                        </div>
+                </article>
+                <article class="col-sm-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Serviço</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed tincidunt tellus. In dictum odio at nibh congue luctus. Nulla nec turpis feugiat, luctus arcu ut, varius lacus.</p>
+                                <p>R$ 00,00</p>
+                                <a href="#" class="btn btn-primary mx-3">Marcar Horario</a>
+                            </div>
+                        </div>
+                </article>
+            </div>
+        </section>
+    </div>
+    <hr>
+    <section class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mt-2">
+                    <h3 class="text-center text-light">LUGARES QUE ATENDEMOS</h3>
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-12">
+                    <ul class="nav nav-pills justify-content-center" id="pills-nav" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="nav-pills-01" data-toggle="pill" href="#nav-item-01">Faculdade Impacta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="nav-pills-02" data-toggle="pill" href="#nav-item-02">Toca do Gordo</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="col-6 tab-content my-3" id="nav-pills-content">
+                        <div class="tab-pane fade show active mx-2" id="nav-item-01" role="tabpanel">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.1847902101263!2d-46.651510585022784!3d-23.525855184700536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a36ed390d1b%3A0x774f96e1ad521edb!2sFaculdade+Impacta+Tecnologia!5e0!3m2!1spt-BR!2sbr!4v1522445102672" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                        <div class="tab-pane fade show mx-2" id="nav-item-02" role="tabpanel">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7314.445034043616!2d-46.66716548399545!3d-23.560450455478097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59d3011d21cb%3A0x5ddf374d194fcd07!2sToca+do+Gordo!5e0!3m2!1spt-BR!2sbr!4v1522450372554" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <hr>
+        <section>
+            <div class="row">
+                <div class="col-12 my-3">
+                    <h2 class="text-center">DEPOIMENTOS</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <p class="text-center"><i class="fas fa-users fa-7x"></i></p>
+                    <!--<img src=#>-->
+                    <p class="text-center">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed tincidunt tellus."</p>
+                </div>
+                <div class="col-4">
+                    <p class="text-center"><i class="fas fa-users fa-7x"></i></p>
+                    <!--<img src=#>-->
+                    <p class="text-center">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed tincidunt tellus."</p>
+                </div>
+                <div class="col-4">
+                    <p class="text-center"><i class="fas fa-users fa-7x"></i></p>
+                    <!--<img src=#>-->
+                    <p class="text-center">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed tincidunt tellus."</p>
+                </div>
+            </div>
+        </section>
+        <hr>
+    </div>
 {% endblock %}

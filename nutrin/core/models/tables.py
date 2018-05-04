@@ -37,18 +37,25 @@ class User(db.Model):
     def __repr__(self):
         return "<User {0}>".format(self.username)
     
-class Paciente(User):
+class Paciente(db.Model):
     __tablename__ = "pacientes"
 
-    dataNascimento = db.Column(db.DateTime)
-    sexo = db.Column(db.String)
-    cidade = db.Column(db.String)
-    profissao = db.Column(db.String)
-    celular = db.Column(db.String)
-    objetivo = db.Column(db.String)
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    dataNascimento = db.Column(db.String)
+    sexo = db.Column(db.String(1))
+    cidade = db.Column(db.String(50))
+    profissao = db.Column(db.String(50))
+    celular = db.Column(db.String(11))
+    objetivo = db.Column(db.String(50))
+
+    user = db.relationship('User', foreign_keys=user_id)
 
     def __init__(self, username, password, name, email, dataNascimento, sexo, cidade, profissao, celular, objetivo):
-        super().__init__(username, password, name, email, "P")
+        u = User(username, password, name, email, "P")
+        db.session.add(u)
+        db.session.commit()
+        self.user_id = u.id
         self.dataNascimento = dataNascimento
         self.sexo = sexo
         self.cidade = cidade
@@ -58,3 +65,21 @@ class Paciente(User):
     
     def __repr__(self):
         return "<Paciente {0}>".format(self.username)
+
+class Nutricionista(db.Model):
+    __tablename__ = "nutricionistas"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+
+    user = db.relationship('User', foreign_keys=user_id)
+
+    def __init__(self, username, password, name, email):
+        u = User(username, password, name, email, "N")
+        db.session.add(u)
+        db.session.commit()
+        user_id = u.id
+    
+    def __repr__(self):
+        return "<Nutricionista {0}>".format(self.username)
+

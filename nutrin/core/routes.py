@@ -4,7 +4,7 @@ from flask import render_template, redirect, url_for, flash
 
 #login
 from flask_login import login_user, logout_user
-from core.models.tables import User
+from core.models.tables import User, Paciente
 from core.models.forms import LoginForm
 
 @lm.user_loader
@@ -13,7 +13,7 @@ def load_user(id):
 
 @app.route("/login", methods=["POST","GET"])
 def loginRoute():
-    form = LoginForm() 
+    form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
         if user and user.password == form.password.data:

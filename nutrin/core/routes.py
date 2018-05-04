@@ -5,7 +5,9 @@ from flask import render_template, redirect, url_for, flash
 #login
 from flask_login import login_user, logout_user
 from core.models.tables import User, Paciente
-from core.models.forms import LoginForm
+
+#form
+from core.models.forms import LoginForm, CadastroPacienteForm
 
 @lm.user_loader
 def load_user(id):
@@ -26,6 +28,10 @@ def loginRoute():
         print(form.errors)
     return render_template('login.html', form=form)
 
+@app.route("/cadastrarPaciente", methods=['POST','GET'])
+def cadastrarPacienteRoute():
+    form = CadastroPacienteForm()
+    return render_template('cadastroPaciente.html', form=form)
 
 @app.route("/")
 def indexRoute():

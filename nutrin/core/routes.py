@@ -30,7 +30,7 @@ def loginRoute():
 
 @app.route("/areaNutricionista", methods=["GET"])
 def areaNutricionistaRoute():
-    return render_template('baseGerenciamento.html')
+    return render_template('areaNutricionista.html')
 
 @app.route("/cadastrarPaciente", methods=['POST','GET'])
 def cadastrarPacienteRoute():

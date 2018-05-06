@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block main %}
-    <div>
+    <!--<div>
         <form action="" method="POST">
             {{ form.csrf_token }}
             <div class="form-group">
@@ -44,7 +44,10 @@
             </div>
             <div class="form-group">
                 <label for="Sexo">Sexo:</label>
-                {{ form.sexo(class="form-control", type="date", id="sexo") }}
+                {% for sexo_option in form.sexo %}
+                    {{ sexo_option }}
+                    {{ sexo_option.label }}
+                {% endfor %}
                 {% if form.errors.sexo %}
                     <div class="alert alert-danger" role="alert">
                         <ul>
@@ -57,5 +60,6 @@
             </div>
 
         </form>
-    </div>
+    </div>-->
+    <p>ola</p>
 {% endblock %}

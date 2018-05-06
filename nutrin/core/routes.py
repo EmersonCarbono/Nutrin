@@ -28,6 +28,10 @@ def loginRoute():
         print(form.errors)
     return render_template('login.html', form=form)
 
+@app.route("/areaNutricionista", methods=["GET"])
+def areaNutricionistaRoute():
+    return render_template('baseGerenciamento.html')
+
 @app.route("/cadastrarPaciente", methods=['POST','GET'])
 def cadastrarPacienteRoute():
     form = CadastroPacienteForm()

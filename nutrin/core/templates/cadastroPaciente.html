@@ -41,5 +41,70 @@
                 </div>
             {% endif %}
         </div>
+        <div class="form-group">
+            <label for="sexo">Sexo:</label>
+            {{ form.sexo(class="form-control", id="sexo") }}
+            {% if form.errors.sexo %}
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                    {% for e in form.errors.sexo %}
+                        <li>{{ e }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="cidade">Cidade:</label>
+            {{ form.cidade(class="form-control", id="cidade") }}
+            {% if form.errors.cidade %}
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                    {% for e in form.errors.cidade %}
+                        <li>{{ e }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="profissao">Profissão:</label>
+            {{ form.profissao(class="form-control", id="profissao") }}
+            {% if form.errors.profissao %}
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                    {% for e in form.errors.profissao %}
+                        <li>{{ e }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="celular">Celular:</label>
+            {{ form.celular(class="form-control", id="celular") }}
+            {% if form.errors.celular %}
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                    {% for e in form.errors.celular %}
+                        <li>{{ e }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="celular">Objetivo:</label>
+            {{ form.objetivo(class="form-control", id="objetivo") }}
+            {% if form.errors.objetivo %}
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                    {% for e in form.errors.objetivo %}
+                        <li>{{ e }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        </div>
     </form>
 {% endblock %}

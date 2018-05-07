@@ -11,7 +11,7 @@ class CadastroPacienteForm(FlaskForm):
     name = StringField("name", validators=[DataRequired()])
     email = StringField("email", validators=[DataRequired()])
     dataNascimento = StringField("dataNascimento", validators=[DataRequired()])
-    sexo = RadioField("sexo", choices=["M","F"], validators=[DataRequired()])
+    sexo = RadioField("sexo", choices=[("M","Masculino"),("F","Feminino")], validators=[DataRequired()])
     cidade = StringField("cidade", validators=[DataRequired()])
     profissao = StringField("profissao", validators=[DataRequired()])
     celular = StringField('celular', validators=[DataRequired()])

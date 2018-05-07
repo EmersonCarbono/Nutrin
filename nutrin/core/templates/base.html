@@ -19,7 +19,11 @@
                     {{ current_user.name }}
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Area</a>
+                    {% if current_user.tipo == "N" %}
+                        <a class="dropdown-item" href="{{ url_for("areaNutricionistaRoute") }}">Area da nutricionista</a>
+                    {% elif current_user.tipo == "P" %}
+                        <a class="dropdown-item" href="#">Area do paciente</a>
+                    {% endif %}
                     <a class="dropdown-item" href="{{ url_for("logout") }}">Logout</a>
                 </div>
             </div>

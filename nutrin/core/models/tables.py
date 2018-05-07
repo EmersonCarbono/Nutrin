@@ -78,7 +78,7 @@ class Nutricionista(db.Model):
         u = User(username, password, name, email, "N")
         db.session.add(u)
         db.session.commit()
-        user_id = u.id
+        self.user_id = u.id
     
     def __repr__(self):
         return "<Nutricionista {0}>".format(self.username)

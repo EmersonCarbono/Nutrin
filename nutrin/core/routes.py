@@ -4,7 +4,7 @@ from flask import render_template, redirect, url_for, flash
 
 #login
 from flask_login import login_user, logout_user
-from core.models.tables import User, Paciente
+from core.models.tables import User, Paciente, Nutricionista
 
 #form
 from core.models.forms import LoginForm, CadastroPacienteForm

@@ -3,20 +3,20 @@
 {% block content %}
     <!--<div>
         <form action="" method="POST">
-            {{ form.csrf_token }}
-            <div class="form-group">
-                <label for="name">Nome:</label>
-                {{ form.name(class="form-control", placeholder="Nome do paciente", id="name") }}
-                {% if form.errors.name %}
-                    <div class="alert alert-danger" role="alert">
-                        <ul>
-                        {% for e in form.errors.name %}
-                            <li>{{ e }}</li>
-                        {% endfor %}
-                        </ul>
-                    </div>
-                {% endif %}
-            </div>
+        {{ form.csrf_token }}
+        <div class="form-group">
+            <label for="name">Nome:</label>
+            {{ form.name(class="form-control", placeholder="Nome do paciente", id="name") }}
+            {% if form.errors.name %}
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                    {% for e in form.errors.name %}
+                        <li>{{ e }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        </div>
             <div class="form-group">
                 <label for="email">Email:</label>
                 {{ form.email(class="form-control", placeholder="Email do paciente", id="email") }}

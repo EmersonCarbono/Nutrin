@@ -35,6 +35,21 @@ def areaNutricionistaRoute():
 @app.route("/cadastrarPaciente", methods=['POST','GET'])
 def cadastrarPacienteRoute():
     form = CadastroPacienteForm()
+    if form.validate_on_submit():
+        p = Paciente(
+            form.name.data,
+            form.email.data,
+            form.dataNascimento.data,
+            form.sexo.data,
+            form.cidade.data,
+            form.profissao.data,
+            form.celular.data,
+            form.objetivo.data
+        )
+        db.session.add(p)
+        db.session.commit()
+    else:
+        print(form.errors)
     return render_template('cadastroPaciente.html', form=form)
 
 @app.route("/")

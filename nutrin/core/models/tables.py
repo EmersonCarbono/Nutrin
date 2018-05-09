@@ -27,9 +27,9 @@ class User(db.Model):
     def get_id(self):
         return str(self.id)
 
-    def __init__(self, username, password, name, email, tipo):
-        self.username = username
-        self.password = password
+    def __init__(self, name, email, tipo):
+        self.username = self.id
+        self.password = "nutrin1700"
         self.name = name
         self.email = email
         self.tipo = tipo
@@ -51,8 +51,8 @@ class Paciente(db.Model):
 
     user = db.relationship('User', foreign_keys=user_id)
 
-    def __init__(self, username, password, name, email, dataNascimento, sexo, cidade, profissao, celular, objetivo):
-        u = User(username, password, name, email, "P")
+    def __init__(self, name, email, dataNascimento, sexo, cidade, profissao, celular, objetivo):
+        u = User(name, email, "P")
         db.session.add(u)
         db.session.commit()
         self.user_id = u.id
@@ -62,9 +62,7 @@ class Paciente(db.Model):
         self.profissao = profissao
         self.celular = celular
         self.objetivo = objetivo
-    
-    def __repr__(self):
-        return "<Paciente {0}>".format(self.username)
+
 
 class Nutricionista(db.Model):
     __tablename__ = "nutricionistas"

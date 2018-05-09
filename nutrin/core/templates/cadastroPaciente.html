@@ -1,6 +1,6 @@
 {% extends 'areaNutricionista.html '%}
 {% block content %}
-    <form action="" method="">
+    <form action="" method="POST" class="my-5">
         {{ form.csrf_token }}
         <div class="form-group">
             <label for="name">Nome:</label>
@@ -30,7 +30,7 @@
         </div>
         <div class="form-group">
             <label for="dataNascimento">Data de nascimento:</label>
-            {{ form.dataNascimento(class="form-control", type="date", id="dataNascimento") }}
+            {{ form.dataNascimento(class="form-control", id="dataNascimento") }}
             {% if form.errors.dataNascimento %}
                 <div class="alert alert-danger" role="alert">
                     <ul>
@@ -56,7 +56,7 @@
         </div>
         <div class="form-group">
             <label for="cidade">Cidade:</label>
-            {{ form.cidade(class="form-control", id="cidade") }}
+            {{ form.cidade(class="form-control", id="cidade", placeholder="Cidade do paciente") }}
             {% if form.errors.cidade %}
                 <div class="alert alert-danger" role="alert">
                     <ul>
@@ -69,7 +69,7 @@
         </div>
         <div class="form-group">
             <label for="profissao">Profissão:</label>
-            {{ form.profissao(class="form-control", id="profissao") }}
+            {{ form.profissao(class="form-control", id="profissao", placeholder="Profissão do paciente") }}
             {% if form.errors.profissao %}
                 <div class="alert alert-danger" role="alert">
                     <ul>
@@ -82,7 +82,7 @@
         </div>
         <div class="form-group">
             <label for="celular">Celular:</label>
-            {{ form.celular(class="form-control", id="celular") }}
+            {{ form.celular(class="form-control", id="celular", placeholder="Celular do paciente") }}
             {% if form.errors.celular %}
                 <div class="alert alert-danger" role="alert">
                     <ul>
@@ -95,7 +95,7 @@
         </div>
         <div class="form-group">
             <label for="celular">Objetivo:</label>
-            {{ form.objetivo(class="form-control", id="objetivo") }}
+            {{ form.objetivo(class="form-control", id="objetivo", placeholder="Objetivo do paciente") }}
             {% if form.errors.objetivo %}
                 <div class="alert alert-danger" role="alert">
                     <ul>
@@ -106,5 +106,9 @@
                 </div>
             {% endif %}
         </div>
+        <button class="btn btn-primary" type="submit">Cadastrar</button>
     </form>
+{% endblock %}
+{% block js %}
+
 {% endblock %}

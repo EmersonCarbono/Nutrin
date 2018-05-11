@@ -1,8 +1,6 @@
 $(document).ready(function(){
 
     $('#email').attr('type','email')
-
-
     // Adiconando placeholder, type e as mask necessarias
     //$('#id_nome').attr("placeholder","Digite o nome");
     //$('#id_dataNascimento').attr("type","date");
@@ -13,3 +11,9 @@ $(document).ready(function(){
     //.mask('00000000000');
 
 });
+
+
+$(document).ready(function() {
+    $("#celular").mask("99 999999999");
+    $("#dataNascimento").mask("00/00/0000");
+})

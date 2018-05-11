@@ -37,13 +37,15 @@ def cadastrarPacienteRoute():
     form = CadastroPacienteForm()
     if form.validate_on_submit():
         p = Paciente(
+            form.username.data,
+            form.password.data,
             form.name.data,
             form.email.data,
+            form.celular.data,
             form.dataNascimento.data,
             form.sexo.data,
             form.cidade.data,
             form.profissao.data,
-            form.celular.data,
             form.objetivo.data
         )
         db.session.add(p)

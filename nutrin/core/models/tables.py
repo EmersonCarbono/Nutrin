@@ -8,6 +8,7 @@ class User(db.Model):
     password = db.Column(db.String)
     name = db.Column(db.String)
     email = db.Column(db.String, unique=True)
+    celular = db.Column(db.String(11))
     tipo = db.Column(db.String(1))
 
     #tipo: N - nutricionista, P - paciente, A - admin  
@@ -27,11 +28,12 @@ class User(db.Model):
     def get_id(self):
         return str(self.id)
 
-    def __init__(self, name, email, tipo):
-        self.username = self.id
-        self.password = "nutrin1700"
+    def __init__(self, username, password, name, email, celular, tipo):
+        self.username = username
+        self.password = password
         self.name = name
         self.email = email
+        self.celular = celular
         self.tipo = tipo
     
     def __repr__(self):
@@ -46,13 +48,12 @@ class Paciente(db.Model):
     sexo = db.Column(db.String(1))
     cidade = db.Column(db.String(50))
     profissao = db.Column(db.String(50))
-    celular = db.Column(db.String(11))
     objetivo = db.Column(db.String(50))
 
     user = db.relationship('User', foreign_keys=user_id)
 
-    def __init__(self, name, email, dataNascimento, sexo, cidade, profissao, celular, objetivo):
-        u = User(name, email, "P")
+    def __init__(self, username, password, name, email, celular, dataNascimento, sexo, cidade, profissao, objetivo):
+        u = User(username, password, name, email, celular, "P")
         db.session.add(u)
         db.session.commit()
         self.user_id = u.id
@@ -60,7 +61,6 @@ class Paciente(db.Model):
         self.sexo = sexo
         self.cidade = cidade
         self.profissao = profissao
-        self.celular = celular
         self.objetivo = objetivo
 
 
@@ -72,7 +72,7 @@ class Nutricionista(db.Model):
 
     user = db.relationship('User', foreign_keys=user_id)
 
-    def __init__(self, username, password, name, email):
+    def __init__(self, username, password, name, email, celular):
         u = User(username, password, name, email, "N")
         db.session.add(u)
         db.session.commit()

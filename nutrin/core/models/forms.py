@@ -5,7 +5,7 @@ from wtforms import validators
 
 class LoginForm(FlaskForm):
     username = StringField("username", validators=[validators.DataRequired()])
-    password = PasswordField("passeord", validators=[validators.DataRequired()])
+    password = PasswordField("password", validators=[validators.DataRequired()])
     remember_me = BooleanField("remember_me")
 
 
@@ -39,5 +39,17 @@ class CadastroPacienteForm(FlaskForm):
     objetivo = StringField('objetivo',validators=[
         validators.DataRequired(message="Este campo é obrigatorio")
         ])
+    username = StringField('username', validators=[
+        validators.DataRequired(message="Este campo é obrigatorio"),
+        validators.length(min=5, max=30, message="Digite um username de 5 a 30 caracteres")
+    ])
+    password = PasswordField("password", validators=[
+        validators.DataRequired(message="Este campo é obrigatorio"),
+        validators.EqualTo('c_password', message="As senhas estão diferentes"),
+    ])
+    c_password = PasswordField('confirmar pasword', validators=[
+        validators.DataRequired(message="Este campo é obrigatorio"),
+    ])
+
 
          

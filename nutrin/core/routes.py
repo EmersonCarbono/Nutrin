@@ -54,6 +54,12 @@ def cadastrarPacienteRoute():
         print(form.errors)
     return render_template('cadastroPaciente.html', form=form)
 
+@app.route("/consultarPaciente", methods=["GET"])
+def consultarPacienteRoute():
+    pacientes = Paciente.query.all()
+    print(pacientes[0].user.name)
+    return render_template('index.html')
+
 @app.route("/")
 def indexRoute():
     return render_template('index.html')

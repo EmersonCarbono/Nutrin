@@ -7,17 +7,21 @@
     </form>
     {% for p in response.Dados %}
         <div class="row">
-                <div class="col-3">
+                <div class="col-2">
                     <a href="{{ url_for('consultarPacienteRoute', paciente_username=p.username) }}">{{ p.nome }}</a>  
                 </div>
-                <div class="col-3">
+                <div class="col-2">
                     {{ p.username }}
                 </div>
-                <div class="col-3">
+                <div class="col-4">
                     {{ p.email }}
                 </div>
-                <div class="col-3">
+                <div class="col-2">
                     {{ p.celular }}
+                </div>
+                <div class="col-2">
+                    <a href="#" >Excluir</a>
+                    <a href="#" >Editar</a>
                 </div>
             </a>
         </div>

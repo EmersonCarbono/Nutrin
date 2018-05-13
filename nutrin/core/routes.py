@@ -63,7 +63,8 @@ def listarPacienteRoute():
 
 @app.route("/paciente/<paciente_username>", methods=["GET"])
 def consultarPacienteRoute(paciente_username):
-    return render_template('index.html')
+    from core.controllers.consultarPaciente import consultarPaciente
+    return render_template('perfilPaciente.html')
 
 @app.route("/")
 def indexRoute():

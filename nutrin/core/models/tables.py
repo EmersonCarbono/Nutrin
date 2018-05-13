@@ -62,6 +62,9 @@ class Paciente(db.Model):
         self.cidade = cidade
         self.profissao = profissao
         self.objetivo = objetivo
+    
+    def __repr__(self):
+        return "<Paciente {0}>".format(self.user.username)
 
 
 class Nutricionista(db.Model):

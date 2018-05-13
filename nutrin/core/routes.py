@@ -1,6 +1,7 @@
-from core import app, db, lm
+from core import app, db, lm, response
 from flask import render_template, redirect, url_for, flash
-#from controllers.index import index
+from core.controllers.index import index
+
 
 #login
 from flask_login import login_user, logout_user
@@ -54,15 +55,19 @@ def cadastrarPacienteRoute():
         print(form.errors)
     return render_template('cadastroPaciente.html', form=form)
 
-@app.route("/consultarPaciente", methods=["GET"])
-def consultarPacienteRoute():
-    pacientes = Paciente.query.all()
-    print(pacientes[0].user.name)
+@app.route("/pacientes", methods=["GET"])
+def listarPacienteRoute():
+    from core.controllers.listarPaciente import listarPaciente
+    response['Dados'] = listarPaciente()
+    return render_template('areaNutricionista/listarPaciente.html', response=response)
+
+@app.route("/paciente/<paciente_username>", methods=["GET"])
+def consultarPacienteRoute(paciente_username):
     return render_template('index.html')
 
 @app.route("/")
 def indexRoute():
-    return render_template('index.html')
+    return index()
 
 @app.route("/logout")
 def logout():

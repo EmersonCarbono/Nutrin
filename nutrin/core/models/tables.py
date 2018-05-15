@@ -76,7 +76,7 @@ class Nutricionista(db.Model):
     user = db.relationship('User', foreign_keys=user_id)
 
     def __init__(self, username, password, name, email, celular):
-        u = User(username, password, name, email, "N")
+        u = User(username, password, name, email, celular, "N")
         db.session.add(u)
         db.session.commit()
         self.user_id = u.id

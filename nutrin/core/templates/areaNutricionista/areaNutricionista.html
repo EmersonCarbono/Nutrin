@@ -6,7 +6,11 @@
         <div class="col-3">
             <ul>
                 <li>
-                    <a href="{{ url_for("cadastrarPacienteRoute") }}">Gerenciar Cliente</a>
+                    <p>Gerenciar Cliente</p>
+                    <ul>
+                        <li><a href="{{ url_for("cadastrarPacienteRoute") }}">Cadastrar Paciente</a></li>
+                        <li><a href="{{ url_for("listarPacienteRoute") }}">Consultar Paciente</a></li>
+                    </ul>
                 </li>
                 <li>
                     Gerenciar 

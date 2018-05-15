@@ -1,0 +1,38 @@
+{% if current_user.tipo == "N" %}
+    {% extends 'areaNutricionista/areaNutricionista.html '%}
+{% endif %}
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <p>Nome: {{ response.Dados.0.name}}</p>
+        </div>
+        <div class="col-12">
+                <p>Email: {{ response.Dados.0.email}}</p>
+        </div>
+        <div class="col-12">
+                <p>Username: {{ response.Dados.0.username}}</p>
+        </div>
+        <div class="col-12">
+                <p>Celular: {{ response.Dados.0.celular}}</p>
+        </div>
+        <div class="col-12">
+                <p>Data Nascimento: {{ response.Dados.0.dataNascimento}}</p>
+        </div>
+        <div class="col-12">
+                <p>Sexo: {{ response.Dados.0.sexo}}</p>
+        </div>
+        <div class="col-12">
+                <p>Cidade: {{ response.Dados.0.cidade}}</p>
+        </div>
+        <div class="col-12">
+                <p>Profissão: {{ response.Dados.0.profissao}}</p>
+        </div>
+        <div class="col-12">
+                <p>Objetivo: {{ response.Dados.0.objetivo}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <a href="{{ url_for('alterarCadastroPacienteRoute', paciente_username=response.Dados.0.username) }}">Editar</a>
+        <a href="{{ url_for('excluirPacienteRoute', paciente_username=response.Dados.0.username) }}">Excluir</a>
+    </div>
+{% endblock %}

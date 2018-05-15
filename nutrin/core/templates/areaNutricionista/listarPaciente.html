@@ -1,4 +1,4 @@
-{% extends 'areaNutricionista.html '%}
+{% extends 'areaNutricionista/areaNutricionista.html '%}
 {% block content %}
     <form method="POST" action="" class="mt-3">
         <div class="form-group">
@@ -20,8 +20,8 @@
                     {{ p.celular }}
                 </div>
                 <div class="col-2">
-                    <a href="#" >Excluir</a>
-                    <a href="#" >Editar</a>
+                    <a href="{{ url_for('excluirPacienteRoute', paciente_username=p.username) }}" >Excluir</a>
+                    <a href="{{ url_for('alterarCadastroPacienteRoute', paciente_username=p.username) }}" >Editar</a>
                 </div>
             </a>
         </div>

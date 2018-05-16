@@ -6,18 +6,24 @@
         </div>
     </form>
     {% for p in response.Dados %}
-        <div class="row">
+        <div class="row" class="pacientes">
                 <div class="col-2">
-                    <a href="{{ url_for('consultarPacienteRoute', paciente_username=p.username) }}">{{ p.nome }}</a>  
+                    <a class="name-paciente" href="{{ url_for('consultarPacienteRoute', paciente_username=p.username) }}">{{ p.nome }}</a>  
                 </div>
                 <div class="col-2">
+                    <p class="user-paciente">
                     {{ p.username }}
+                </p>
                 </div>
                 <div class="col-4">
+                    <p class="email-paciente">
                     {{ p.email }}
+                    </p>
                 </div>
                 <div class="col-2">
+                    <p class="celular-paciente">
                     {{ p.celular }}
+                </p>
                 </div>
                 <div class="col-2">
                     <a href="{{ url_for('excluirPacienteRoute', paciente_username=p.username) }}" >Excluir</a>
@@ -26,4 +32,5 @@
             </a>
         </div>
     {% endfor %}
+    <script src="../../static/js/buscarpaciente.js"></script>
 {% endblock %}

@@ -7,7 +7,7 @@ procurar[0].addEventListener("input", function(){
         for(var i = 0; i<pacientes.length; i++){
             paciente = pacientes[i];
             nome = nome_pacientes[i].textContent;
-            var expressao = new RegExp(procurar[0].value);
+            var expressao = new RegExp(procurar[0].value, "i");
             if(! expressao.test(nome)){
                 paciente.classList.add("esconder");
                 paciente.style.display = "none";

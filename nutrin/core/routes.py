@@ -1,5 +1,6 @@
 from core import app, db, lm, response
 from flask import render_template, redirect, url_for, flash
+from core.models.tables import  User
 
 @lm.user_loader
 def load_user(id):
@@ -77,7 +78,6 @@ def excluirPacienteRoute(paciente_username):
     from core.controllers.excluirPaciente import excluir
     excluir(paciente_username)
     return redirect(url_for('listarPacienteRoute'))
-
 
 @app.route("/")
 def indexRoute():

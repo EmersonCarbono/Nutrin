@@ -6,14 +6,18 @@
         </div>
     </form>
     {% for p in response.Dados %}
-        <div class="row" class="pacientes">
+        <div class="row paciente">
                 <div class="col-2">
-                    <a class="name-paciente" href="{{ url_for('consultarPacienteRoute', paciente_username=p.username) }}">{{ p.nome }}</a>  
+                    <a href="{{ url_for('consultarPacienteRoute', paciente_username=p.username) }}">
+                        <p class="nome-paciente">
+                            {{ p.nome }}
+                        </p>
+                    </a>  
                 </div>
                 <div class="col-2">
                     <p class="user-paciente">
                     {{ p.username }}
-                </p>
+                    </p>
                 </div>
                 <div class="col-4">
                     <p class="email-paciente">
@@ -32,5 +36,8 @@
             </a>
         </div>
     {% endfor %}
+    
+{% endblock %}
+{% block js%}
     <script src="../../static/js/buscarpaciente.js"></script>
 {% endblock %}

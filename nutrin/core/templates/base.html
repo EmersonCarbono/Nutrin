@@ -12,7 +12,7 @@
     <header class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <!-- LOGO -->
-            <a class="navbar-brand h1 mb-0" href="#">Nutrin</a>
+            <a class="navbar-brand h1 mb-0" href="{{ url_for("indexRoute") }}">Nutrin</a>
             {% if current_user.is_authenticated %}
             <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -60,7 +60,6 @@ def alterarCadastroPacienteRoute(paciente_username):
     if form.validate_on_submit(): 
         dados = [{
         'username': form.username.data
-        ,'senha': form.password.data
         ,'name': form.name.data
         ,'email': form.email.data
         ,'celular': form.celular.data
@@ -72,6 +71,15 @@ def alterarCadastroPacienteRoute(paciente_username):
         }]
         editar(paciente_username, dados)
     return render_template('editarPaciente.html', response=response, form=form)
+
+@app.route("/alterar-senha/<username>", methods=["GET", "POST"])
+def alterarSenhaRoute(username):
+    from core.models.forms import AlterarSenhaForm
+    from core.controllers.alterarSenha import alterarSenha
+    form = AlterarSenhaForm()
+    if form.validate_on_submit():
+        alterarSenha(username, form.password.data)
+    return render_template("alterarSenha.html", form=form)
 
 @app.route("/excluir/<paciente_username>", methods=["GET"])
 def excluirPacienteRoute(paciente_username):

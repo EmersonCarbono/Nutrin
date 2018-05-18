@@ -2,6 +2,11 @@
     {% extends 'areaNutricionista/areaNutricionista.html '%}
 {% endif %}
 {% block content %}
+    <div class="row">
+        <div class="col-12">
+            <a href="{{url_for('alterarSenhaRoute', username=response.Dados.0.username)}}">Alterar Senha</a>
+        </div>
+    </div>
     <form action="" method="POST" class="my-5">
         {{ form.csrf_token }}
         <div class="form-group">
@@ -121,36 +126,8 @@
                 </div>
             {% endif %}
         </div>
-        <div class="form-group">
-            <label for="password">Senha:</label>
-            {{ form.password(class="form-control", id="password", placeholder="Senha do paciente") }}
-            {% if form.errors.password %}
-                <div class="alert alert-danger" role="alert">
-                    <ul>
-                    {% for e in form.errors.password %}
-                        <li>{{ e }}</li>
-                    {% endfor %}
-                    </ul>
-                </div>
-            {% endif %}
-        </div>
-        <div class="form-group">
-            <label for="c_password">Confirmar Senha:</label>
-            {{ form.c_password(class="form-control", id="c_password", placeholder="Confirmar senha do paciente") }}
-            {% if form.errors.c_password %}
-                <div class="alert alert-danger" role="alert">
-                    <ul>
-                    {% for e in form.errors.c_password %}
-                        <li>{{ e }}</li>
-                    {% endfor %}
-                    </ul>
-                </div>
-            {% endif %}
-        </div>
         <button class="btn btn-primary" type="submit">Cadastrar</button>
     </form>
-
-
 {% endblock %}
 {% block js %}
 <script src="../static/js/jquery-mask/jquery.mask.min.js"></script>

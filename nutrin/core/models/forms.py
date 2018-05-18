@@ -43,6 +43,9 @@ class CadastroPacienteForm(FlaskForm):
         validators.DataRequired(message="Este campo é obrigatorio"),
         validators.length(min=5, max=30, message="Digite um username de 5 a 30 caracteres")
     ])
+
+
+class AlterarSenhaForm(FlaskForm):
     password = PasswordField("password", validators=[
         validators.DataRequired(message="Este campo é obrigatorio"),
         validators.EqualTo('c_password', message="As senhas estão diferentes"),
@@ -50,6 +53,4 @@ class CadastroPacienteForm(FlaskForm):
     c_password = PasswordField('confirmar pasword', validators=[
         validators.DataRequired(message="Este campo é obrigatorio"),
     ])
-
-
          

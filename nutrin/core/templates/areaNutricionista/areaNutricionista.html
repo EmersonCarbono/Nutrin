@@ -4,25 +4,25 @@
 <div class="container">
     <div class="row">
         <div class="col-3">
-            <ul>
-                <li>
-                    <p>Gerenciar Cliente</p>
-                    <ul>
-                        <li><a href="{{ url_for("cadastrarPacienteRoute") }}">Cadastrar Paciente</a></li>
-                        <li><a href="{{ url_for("listarPacienteRoute") }}">Consultar Paciente</a></li>
-                    </ul>
-                </li>
-                <li>
-                    Gerenciar 
-                </li>
-                <li>
-                    Gerenciar 
-                </li>
-                <li>
-                    Gerenciar 
-                </li>
-            </ul>
-
+            <div class="row">
+                <div class="col-4 bg-primary">
+                    foto
+                </div>
+                <div class="col-8 bg-primary">
+                        <p>Emerson Carbonaro</p>
+                        <p>programador</p>
+                </div>
+            </div>
+            <div class="">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for("cadastrarPacienteRoute") }}">Gerenciar Cliente</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for("listarPacienteRoute") }}">Consultar Paciente</a>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="col-9">
             {% block content %}

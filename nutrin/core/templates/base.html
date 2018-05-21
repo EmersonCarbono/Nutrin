@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Nutrin {% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename="bootstrap/node_modules/bootstrap/compiler/bootstrap.css") }}"/>
+    {% block css %}{% endblock %}
 </head>
 <body>
     <!-- NavBar -->

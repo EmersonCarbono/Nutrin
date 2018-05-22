@@ -10,9 +10,9 @@ def Error500(error):
     
 @app.errorhandler(404)
 def Error404(error):
-    response["Mensagem"] = " Ops, pagina não encontrada "
-    response["Status"] = "Error: {}".format(error)
-    response["Dados"] = " "
+    response["Mensagem"] = "Ops, pagina não encontrada "
+    response["Status"] = "",
+    response["Dados"] = error
     return render_template('erro/404.html', response=response)
 
 @app.errorhandler(400)

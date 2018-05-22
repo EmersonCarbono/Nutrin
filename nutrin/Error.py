@@ -4,7 +4,7 @@ from core import app,response
 
 @app.errorhandler(500)
 def Error500(error):
-    response["Mensagem"] = " Tivemos um Problema logo sera Resolvido "
+    response["Mensagem"] = " Tivemos um Problema logo sera resolvido "
     response["Status"] = "Error: {}".format(error)
     response["Dados"] = " "
     return jsonify(response)
@@ -20,14 +20,14 @@ def Error404(error):
 def Error400(error):
     response["Mensagem"] = " Requisição Invalida "
     response["Status"] = "Error: {}".format(error)
-    response["Dados"] = " "
+    response["Dados"] = ""
     return jsonify(response)
 
 @app.errorhandler(403)
 def Error403(error):
     response["Mensagem"] = " Acesso Negado "
     response["Status"] = "Error: {}".format(error)
-    response["Dados"] = " "
+    response["Dados"] = ""
     return jsonify(response)
     
 

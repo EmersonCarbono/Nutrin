@@ -1,6 +1,5 @@
-from flask import  jsonify
-from core import app,response
-
+from flask import  jsonify, render_template
+from core import app, response
 
 @app.errorhandler(500)
 def Error500(error):
@@ -11,10 +10,10 @@ def Error500(error):
     
 @app.errorhandler(404)
 def Error404(error):
-    response["Mensagem"] = " Recurso Invalida "
+    response["Mensagem"] = " Ops, pagina não encontrada "
     response["Status"] = "Error: {}".format(error)
     response["Dados"] = " "
-    return jsonify(response)
+    return render_template('erro/404.html', response=response)
 
 @app.errorhandler(400)
 def Error400(error):

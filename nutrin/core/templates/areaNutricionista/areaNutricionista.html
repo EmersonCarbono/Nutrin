@@ -4,32 +4,35 @@
     <link rel="stylesheet" href="{{ url_for('static', filename="css/menuNutricionista.css") }}"/>
 {% endblock %}
 {% block main %}
+<div class="container-fluid">
     <div class="row">
-        <div id="menu-container" class="col-3">
+        <div id="menu-container" class="col-2 bg-light">
             <div id="user-container" class="row">
                 <div id="foto-perfil-container" class="col-4">
                     <i id="foto-perfil" class="fas fa-user-circle f-4"></i>
                 </div>
                 <div class="col-8">
-                        <p class="nome-usuario">{{ current_user.name }} Emerson Carbonaro</p>
-                        <p class="username-usuario">{{ current_user.username }} emersoncarbono </p>
+                        <p class="nome-usuario">{{ current_user.name }}</p>
+                        <p class="username-usuario">{{ current_user.username }} </p>
                 </div>
             </div>
             <div class="">
-                <ul class="nav flex-column">
+                <ul class="nav flex-column nav-pills" id="v-pills-tab" role="tab-list" arial-orientation="vertical">
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ url_for("cadastrarPacienteRoute") }}">Gerenciar Cliente</a>
+                        <a class="nav-link active" role="tab" aria-selected="true" data-toggle="pill" href="{{ url_for("cadastrarPacienteRoute") }}">Gerenciar Cliente</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for("listarPacienteRoute") }}">Consultar Paciente</a>
+                        <a class="nav-link" role="tab" aria-selected="false" data-toggle="pill" href="{{ url_for("listarPacienteRoute") }}">Consultar Paciente</a>
                     </li>
                 </ul>
             </div>
         </div>
+
         <div class="col-9">
             {% block content %}
             {% endblock %}
         </div>
     </div>
+</div>
 {% endblock %}
 {% block js%}<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>{% endblock %}

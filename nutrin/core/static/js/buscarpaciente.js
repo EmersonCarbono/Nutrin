@@ -21,29 +21,3 @@ procurar[0].addEventListener("input", function(){
         }
     }
 });
-
-
-
-/*procurar[0].addEventListener("input", function() {
-    var pacientes = $("#pacientes");
-    if(this.value.length > 0) {
-        for ( var i = 0; i < pacientes.length ; i++) {
-            var paciente = pacientes[i];
-            var nome = $(".name-paciente");
-            var npaciente = nome.innerHTML();
-            var expressao = new RegExp(this.value, 'i')
-
-            if (! expressao.test(npaciente)) {
-                paciente.classList.add("Visível");
-            }else {
-                paciente.classList.add("Invisível");
-            }
-        }
-    }
-    else{
-        for ( var i = 0 ; i < pacientes.length ; i++) {
-            var paciente = pacientes[i]
-            paciente.classList.remove("Invisível");
-        }
-    }
-})*/

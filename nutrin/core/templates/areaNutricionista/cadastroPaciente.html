@@ -121,7 +121,7 @@
         </div>
         <div class="form-group">
             <label for="password">Senha:</label>
-            {{ form.password(class="form-control", id="password", placeholder="Senha do paciente") }}
+            {{ form.password(class="form-control", id="password", placeholder="Senha") }}
             {% if form.errors.password %}
                 <div class="alert alert-danger" role="alert">
                     <ul>
@@ -134,7 +134,7 @@
         </div>
         <div class="form-group">
             <label for="c_password">Confirmar Senha:</label>
-            {{ form.c_password(class="form-control", id="c_password", placeholder="Confirmar senha do paciente") }}
+            {{ form.c_password(class="form-control", id="c_password", placeholder="Confirmar a senha") }}
             {% if form.errors.c_password %}
                 <div class="alert alert-danger" role="alert">
                     <ul>

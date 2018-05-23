@@ -8,7 +8,6 @@ def editar(paciente_username, dados):
             break
     print(dados)
     p.user.username = dados[0]['username']
-    p.user.senha = dados[0]['senha']
     p.user.name = dados[0]['name']
     p.user.email = dados[0]['email']
     p.user.celular = dados[0]['celular']

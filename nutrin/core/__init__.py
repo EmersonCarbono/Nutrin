@@ -18,4 +18,4 @@ lm.init_app(app)
 
 from core.models import tables
 from core.models.response import response
-from core import routes
+from core import routes, erroHandler

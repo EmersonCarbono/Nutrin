@@ -9,6 +9,15 @@ class LoginForm(FlaskForm):
     remember_me = BooleanField("remember_me")
 
 
+def tamanho_senha(form, field):
+    if len(field.data) not in range(6,9):
+        raise validators.ValidationError('A senha deve conter no minimo 6 caracteres e nomáximo 8')
+
+def min_mai_number(form, field):
+    s = field.data
+    if not(any(x.islower() for x in s)) or not(any(x.isupper() for x in s)) or not(any(x.isdigit() for x in s)):
+        raise validators.ValidationError("A senha deve conter letras minusculas, maiusculas e numeros")
+
 class CadastroPacienteForm(FlaskForm):
     name = StringField("name", validators=[
         validators.DataRequired(message="Este campo é obrigatorio"),
@@ -46,10 +55,22 @@ class CadastroPacienteForm(FlaskForm):
     password = PasswordField("password", validators=[
         validators.DataRequired(message="Este campo é obrigatorio"),
         validators.EqualTo('c_password', message="As senhas estão diferentes"),
+        min_mai_number,
+        tamanho_senha,
     ])
     c_password = PasswordField('confirmar pasword', validators=[
         validators.DataRequired(message="Este campo é obrigatorio"),
     ])
 
 
+class AlterarSenhaForm(FlaskForm):
+    password = PasswordField("password", validators=[
+        validators.DataRequired(message="Este campo é obrigatorio"),
+        validators.EqualTo('c_password', message="As senhas estão diferentes"),
+        min_mai_number,
+        tamanho_senha,
+    ])
+    c_password = PasswordField('confirmar pasword', validators=[
+        validators.DataRequired(message="Este campo é obrigatorio"),
+    ])
          

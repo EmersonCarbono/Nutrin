@@ -20,4 +20,8 @@ procurar[0].addEventListener("input", function(){
             escondidos[i].style.display = "";
         }
     }
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 935aeccd2562a20e91fecd9d30b991e31fcbb224

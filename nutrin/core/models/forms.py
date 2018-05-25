@@ -8,6 +8,19 @@ class LoginForm(FlaskForm):
     password = PasswordField("password", validators=[validators.DataRequired()])
     remember_me = BooleanField("remember_me")
 
+def username_unique(form, field):
+    from core.controllers.listarPaciente import listarPaciente
+    pacientes = listarPaciente()
+    print(pacientes)
+    for p in pacientes:
+        if p["username"] == field.data:
+            raise validators.ValidationError("Este username já esta sendo usado")
+
+def email_unique(form, field):
+    from core.controllers.listarPaciente import listarPaciente
+    for p in listarPaciente():
+        if p["email"] == field.data:
+            raise validators.ValidationError("Este email já esta sendo usado")
 
 def tamanho_senha(form, field):
     if len(field.data) not in range(6,9):
@@ -25,7 +38,8 @@ class CadastroPacienteForm(FlaskForm):
         ])
     email = EmailField("email", validators=[
         validators.DataRequired(message="Este campo é obrigatorio"),
-        validators.Email(message="Digite um email valido")
+        validators.Email(message="Digite um email valido"),
+        email_unique,
         ])
     dataNascimento = DateField("dataNascimento", validators=[
         validators.DataRequired(message="Este campo é obrigatorio"),
@@ -50,7 +64,8 @@ class CadastroPacienteForm(FlaskForm):
         ])
     username = StringField('username', validators=[
         validators.DataRequired(message="Este campo é obrigatorio"),
-        validators.length(min=5, max=30, message="Digite um username de 5 a 30 caracteres")
+        validators.length(min=5, max=30, message="Digite um username de 5 a 30 caracteres"),
+        username_unique,
     ])
     password = PasswordField("password", validators=[
         validators.DataRequired(message="Este campo é obrigatorio"),
